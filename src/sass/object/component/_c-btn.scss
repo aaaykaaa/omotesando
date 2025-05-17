@@ -1,0 +1,114 @@
+@use "global" as *;
+
+// sp四角青に白字
+.c-btn {
+    width: 50%;
+    padding: rem(18) rem(10);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(14);
+    font-weight: $bold;
+    line-height: calc(20/20);
+    color: $white;
+    background-color: $color2;
+}
+
+.c-btn span {
+	position: relative;
+    padding-right: rem(25);
+}
+
+.c-btn span::after {
+    background-color: $white;
+    content: "";
+    display: inline-block;
+    mask-image: url(../images/common/btn-icon.svg);
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    position: absolute;
+    width: rem(13);
+    height: rem(13);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+// sp四角赤に白
+.c-btn--orange,
+.c-btn--sm-orange,
+.c-btn--lg-orange {
+    background-color: $accent-color1;
+}
+
+.c-btn--sm-blue,
+.c-btn--sm-orange {
+    display: none;
+    @include mq(md) {
+        display: inline-flex;
+        width: rem(200);
+        height: rem(40);
+        max-width: rem(200);
+        border-radius: 20px;
+        font-size: rem(13);
+        letter-spacing: 0.06em;
+        line-height: calc(20/13);
+    }
+}
+
+.c-btn--sm-blue span,
+.c-btn--sm-orange span {
+    padding-right: rem(21);
+}
+
+.c-btn--lg-blue,
+.c-btn--lg-orange {
+    padding: rem(18) rem(34) rem(22) rem(30);
+    max-width: rem(349);
+    width: 100%;
+    height: rem(60);
+    font-size: rem(20);
+    letter-spacing: 0.06em;
+    line-height: calc(20/20);
+    border-radius: 50px;
+    flex-direction: column;
+    @include mq(md) {
+    }
+}
+
+.c-btn--lg-blue {
+    background-color: $white;
+    color: $color2;
+    filter: drop-shadow(4px 4px 0px #0033bc);
+}
+
+.c-btn--lg-orange {
+    filter: drop-shadow(4px 4px 0px #B13906);
+}
+
+.c-btn--lg-blue span,
+.c-btn--lg-orange span {
+    padding-right: rem(30);
+}
+
+.c-btn--lg-blue span::after {
+    background-color: $color2;
+}
+
+.c-btn--lg-blue span::after,
+.c-btn--lg-orange span::after {
+    width: rem(20);
+    height: rem(20);
+}
+
+.c-btn--cta {
+    @include mq(md) {
+        width: rem(405);
+        height: rem(69);
+        
+    }
+    @include mq(lg) {
+        width: rem(476);
+        height: rem(81);
+    }
+}
